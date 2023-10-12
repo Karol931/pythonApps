@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mainPage</title>
+    <link rel="stylesheet" href="{% static 'main_page/styles.css' %}">
+</head>
+
+<body>
+    <div class="text">
+        <p>My apps</p>
+    </div>
+    <div class="apps" id="apps">
+        <a href="{% url 'sudoku_solver' %}">Sudoku Solver</a>
+    </div>
+    <div class="text">
+        <p>My games</p>
+    </div>
+    <div class="apps" id="games">
+        <a href="">Hang Man</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="{% static 'sudoku_solver/styles.css' %}">
+
+</head>
+
+<body>
+    <div class="header">Sudoku solver</div>
+    <div class="sudoku">
+        <table>
+            {% for row in sudoku %}
+            <tr>
+                {% for col in row %}
+                {% if col %}
+                <td>{{ col }}</td>
+                {% else %}
+                <td></td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+    <div class="solve"><a href="">Solve</a></div>
+
+</body>
+
+</html>
+
+<script>
+    var eventsource = new EventSource("{% url 'solver' %}")
+</script>
