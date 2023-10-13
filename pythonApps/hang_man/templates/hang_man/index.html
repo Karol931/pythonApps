@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="{% static 'hang_man/styles.css' %}">
+
+</head>
+
+<body>
+    <div class="header">Hang man</div>
+    <div class="container">
+        <div class="lifes">
+            {% for i in "x"|ljust:lifes %}
+            &hearts;
+            {% endfor %}
+        </div>
+        <div class="word">
+            {% for i in word %}
+            _&nbsp;
+            {% endfor %}
+        </div>
+        <div class="guess">
+            <form action="/hang_man" method="post">
+                {% csrf_token %}
+                {{form}}
+                <input type="submit" value="guess" id="button">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
