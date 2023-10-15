@@ -13,7 +13,10 @@
 <body>
     <div class="header">Hang man</div>
     <div class="container">
+        {% if end != '' %}
         <div class="end">{{end}}</div>
+        <a href="{% url 'hang_man' %}">Play again</a>
+        {% endif %}
         <div class="lifes">
             {% if lifes %}
             {% for i in "x"|ljust:lifes %}
