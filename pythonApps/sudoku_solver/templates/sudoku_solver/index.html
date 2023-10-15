@@ -28,7 +28,20 @@
 
         </table>
     </div>
-    <div class="solve"><a href="">Solve</a></div>
+    {% if solvable %}
+    <div class="end">Sudoku is solvable</div>
+    <a href="/sudoku_solver/">Randomize again</a>
+    {% elif solvable == None %}
+    <div class="solve">
+        <form action="/sudoku_solver/" method="post">
+            {% csrf_token %}
+            <button type="submit">Solve</button>
+        </form>
+    </div>
+    {% else %}
+    <div class="end">Sudoku isn't solvable</div>
+    <a class="end" href="/sudoku_solver/">Randomize again</a>
+    {% endif %}
 
 </body>
 
