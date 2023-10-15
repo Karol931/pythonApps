@@ -13,23 +13,35 @@
 <body>
     <div class="header">Hang man</div>
     <div class="container">
+        <div class="end">{{end}}</div>
         <div class="lifes">
+            {% if lifes %}
             {% for i in "x"|ljust:lifes %}
             &hearts;
             {% endfor %}
+            {% endif %}
         </div>
         <div class="word">
-            {% for i in word %}
-            _&nbsp;
+            {% for w in word %}
+            {{w}}&nbsp;
+            {% endfor %}
+        </div>
+        <div class="letters">
+            <p>Guessed letters:</p>
+            {% for l in letters %}
+            {{l}}
             {% endfor %}
         </div>
         <div class="guess">
+            {% if end == '' %}
             <form action="/hang_man" method="post">
                 {% csrf_token %}
                 {{form}}
                 <input type="submit" value="guess" id="button">
             </form>
+            {% endif %}
         </div>
+        <div class="err">{{err}}</div>
     </div>
 </body>
 

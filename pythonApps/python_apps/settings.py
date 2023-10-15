@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_page',
     'sudoku_solver',
-    'hang_man',
+    'hang_man.apps.HangManConfig',
 ]
 
 MIDDLEWARE = [

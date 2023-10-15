@@ -33,17 +33,22 @@ body {
     font-style: italic;
 }
 
+.err,
+.lifes {
+    color: red;
+}
+
 .lifes {
     margin-top: 24px;
-    color: red;
     font-size: 400%;
 }
 
-.word {
+.word,
+.letters {
     color: white;
 }
 
-.guess {
-    flex: 2;
-    gap: 20px;
+.end {
+    color: white;
+    font-size: 24px;
 }

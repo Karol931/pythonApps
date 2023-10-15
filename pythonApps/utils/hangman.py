@@ -26,7 +26,7 @@ def start():
 
     guessed_word = ('_' * len(original_word)).strip()
     
-    print("Your word is, guess a letter:\n")
+    # print("Your word is, guess a letter:\n")
 
     return original_word, guessed_word, life_count
 
